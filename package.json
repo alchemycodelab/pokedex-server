@@ -18,7 +18,8 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node server.js",
-    "start:watch": "nodemon server.js"
+    "start:watch": "nodemon server.js",
+    "import-pokedex": "mongoimport --collection pokemons --drop --jsonArray --file pokedex.json --uri $(heroku config:get MONGODB_URI)"
   },
   "repository": {
     "type": "git",
