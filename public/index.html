@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex API</title>
+    <style>
+        pre {
+            background: whitesmoke;
+            margin: 20px 0;
+            padding: 10px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pokedex API</h1>
+    <p>
+        There is one API endpoint:
+    </p>
+    <p>
+        <pre>
+    <code>
+    https://alchemy-pokedex.herokuapp.com/api/pokedex
+    </code></pre>
+    </p>
+    <h2>Paging</h2>
+    <p>
+        You can specify <code>page</code> and <code>perPage</code> via querystring.
+        Defaults to first page and 20 pokemon per page.
+    </p>
+    <p>
+        <pre>
+    <code>
+    https://alchemy-pokedex.herokuapp.com/api/pokedex?page=3&perPage=50
+    </code></pre>
+    </p>
+    <h2>Querying</h2>
+    <p>
+        You can specify any object property as a query. Strings match
+        if they are included in the specified property, numbers properties 
+        match if they are greater than or equal to the supplied value.
+    </p>
+    <p>
+        <pre>
+    <code>
+    https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=char&defense=50
+    </code></pre>
+    </p>
+    <h2>Data Format</h2>
+    <p>
+        Return format is as follows:
+    </p>
+    <p>
+        <pre>
+    <code>
+    {
+        "count": 801,
+        "page": 1,
+        "perPage": 20,
+        "results": [
+            // pokemon objects
+        ]
+    }
+    </code></pre>
+    </p>
+    <p>
+        Pokemon object looks like:
+    </p>
+    <p>
+        <pre>
+    <code>
+    {
+        "_id": "5cef3501ef6005a77cd4fdd0",
+        "pokemon": "pichu",
+        "id": 187,
+        "species_id": 172,
+        "height": 3,
+        "weight": 20,
+        "base_experience": 41,
+        "type_1": "electric",
+        "type_2": "NA",
+        "attack": 40,
+        "defense": 15,
+        "hp": 20,
+        "special_attack": 35,
+        "special_defense": 35,
+        "speed": 60,
+        "ability_1": "static",
+        "ability_2": "NA",
+        "ability_hidden": "lightning-rod",
+        "color_1": "#F8D030",
+        "color_2": "NA",
+        "color_f": "NA",
+        "egg_group_1": "no-eggs",
+        "egg_group_2": "NA",
+        "url_image": "http://assets.pokemon.com/assets/cms2/img/pokedex/full/172.png",
+        "generation_id": 2,
+        "evolves_from_species_id": "NA",
+        "evolution_chain_id": 10,
+        "shape_id": 8,
+        "shape": "quadruped",
+        "pokebase": "pichu",
+        "pokedex": "http://www.pokemon.com/us/pokedex/pichu"
+    }
+    </code></pre>
+    </p>
+</body>
+</html>
