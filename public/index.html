@@ -16,14 +16,26 @@
 <body>
     <h1>Pokedex API</h1>
     <p>
-        There is one API endpoint:
+        There are two API endpoints:
     </p>
+
+    <h2>Get Pokedex</h2>
     <p>
         <pre>
     <code>
     https://alchemy-pokedex.herokuapp.com/api/pokedex
     </code></pre>
     </p>
+
+    <h2>Get Pokemon</h2>
+    <p>Note that this uses the <code>_id</code> value</p>
+    <p>
+        <pre>
+    <code>
+    https://alchemy-pokedex.herokuapp.com/api/pokedex/<_id>
+    </code></pre>
+    </p>
+
     <h2>Paging</h2>
     <p>
         You can specify <code>page</code> and <code>perPage</code> via querystring.
@@ -35,6 +47,7 @@
     https://alchemy-pokedex.herokuapp.com/api/pokedex?page=3&perPage=50
     </code></pre>
     </p>
+
     <h2>Querying</h2>
     <p>
         You can specify any object property as a query. Strings match
@@ -45,6 +58,19 @@
         <pre>
     <code>
     https://alchemy-pokedex.herokuapp.com/api/pokedex?pokemon=char&defense=50
+    </code></pre>
+    </p>
+
+    <h2>Sorting</h2>
+    <p>
+        Specify a sort property as a query parameter. Optionally specify
+        a direction query parameter with either "asc" or "desc", defaults to 
+        ascending.
+    </p>
+    <p>
+        <pre>
+    <code>
+    https://alchemy-pokedex.herokuapp.com/api/pokedex?sort=defence&direction=desc
     </code></pre>
     </p>
     <h2>Data Format</h2>
