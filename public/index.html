@@ -28,7 +28,9 @@
     </p>
 
     <h2>Get Pokemon</h2>
-    <p>Note that this uses the <code>_id</code> value</p>
+    <p>
+        Note that this uses the <code>_id</code> property value, 
+        <strong>not</strong> the <code>id</code> property.</p>
     <p>
         <pre>
     <code>
@@ -48,11 +50,13 @@
     </code></pre>
     </p>
 
-    <h2>Querying</h2>
+    <h2>Searching</h2>
     <p>
         You can specify any object property as a query. Strings match
         if they are included in the specified property, numbers properties 
-        match if they are greater than or equal to the supplied value.
+        match if they are greater than or equal to the supplied value. If you
+        specify <code>type</code>, it will match <code>type_1</code> <em>or</em>
+        <code>type_2</code>
     </p>
     <p>
         <pre>
