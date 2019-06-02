@@ -30,11 +30,27 @@
     <h3>Get Pokemon</h3>
     <p>
         Note that this uses the <code>_id</code> property value, 
-        <strong>not</strong> the <code>id</code> property.</p>
+        <strong>not</strong> the <code>id</code> property.
+    </p>
     <p>        
         <pre>
     <code>
     https://alchemy-pokedex.herokuapp.com/api/pokedex/5cef3501ef6005a77cd4fd33
+    </code></pre>
+    </p>
+
+    <h3>Get Types, Abilities, Shapes, or Egg Groups</h3>
+    <p>Returns distinct values list with count (see data format below)</p>
+    <p>        
+        <pre>
+    <code>
+    https://alchemy-pokedex.herokuapp.com/api/pokedex/types
+
+    https://alchemy-pokedex.herokuapp.com/api/pokedex/abilities
+
+    https://alchemy-pokedex.herokuapp.com/api/pokedex/shapes
+
+    https://alchemy-pokedex.herokuapp.com/api/pokedex/eggGroups
     </code></pre>
     </p>
 
@@ -56,9 +72,15 @@
     <p>
         You can specify any object property as a query. Strings match
         if they are included in the specified property, numbers properties 
-        match if they are greater than or equal to the supplied value. If you
-        specify <code>type</code>, it will match <code>type_1</code> <em>or</em>
-        <code>type_2</code>
+        match if they are greater than or equal to the supplied value.
+    </p>
+    <p>
+        If you specify <code>type</code>,  
+        <code>ability</code>,  
+        <code>shape</code>, or
+        <code>eggGroup</code>, it will match across all the related
+        fields, for example <code>type</code> will match <code>type_1</code> 
+        <em>or</em> <code>type_2</code>.
     </p>
     <p>
         <pre>
@@ -82,17 +104,24 @@
 
     <h2>Data Format</h2>
     <p>
-        Return format is as follows:
+        Pokedex return format is as follows:
     </p>
     <p>
         <pre>
     <code>
     {
-        "count": 801,
+        "count": 6,
         "page": 1,
         "perPage": 20,
+        "sort": {
+            "by": "pokemon",
+            "direction": "asc"
+        },
+        "search": {
+            "pokemon": "char"
+        },
         "results": [
-            // pokemon objects
+            // pokemon objects (see below)
         ]
     }
     </code></pre>
@@ -136,6 +165,39 @@
         "pokebase": "pichu",
         "pokedex": "http://www.pokemon.com/us/pokedex/pichu"
     }
+    </code></pre>
+    </p>
+
+    <p>
+        Types, Abilities, Shapes and Egg Group lists (
+        note that field name will change: 
+        <code>type</code>,  
+        <code>ability</code>,  
+        <code>shape</code>,  
+        <code>eggGroup</code>) 
+    </p>
+    <p>
+        <pre>
+    <code>
+    [
+        {
+            "count": 72,
+            "type": "bug"
+        },
+        {
+            "count": 50,
+            "type": "dark"
+        },
+        {
+            "count": 50,
+            "type": "dragon"
+        },
+        {
+            "count": 50,
+            "type": "electric"
+        },
+        // ...
+    ]
     </code></pre>
     </p>
 </body>
