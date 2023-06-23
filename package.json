@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "devDependencies": {
-    "eslint": "^6.6.0"
+    "eslint": "^8.43.0"
   },
   "scripts": {
     "lint": "eslint .",
@@ -29,7 +29,7 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongoose": "^5.7.7",
+    "mongoose": "^5.13.19",
     "morgan": "^1.9.1"
   }
 }
